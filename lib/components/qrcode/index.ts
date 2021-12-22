@@ -12,7 +12,7 @@ export default {
 	props: {
 		size: {
 			type: Number,
-			default: 512
+			default: 375
 		},
 		level: {
 			type: String,
@@ -70,13 +70,6 @@ export default {
 			return props.content
 		})
 
-		let windowWidth = ref(0);
-		let pixelRatio = ref(0);
-
-		let designWidth = ref(375);
-
-		let scale = computed(() => windowWidth.value / designWidth.value / 2)
-
 		let convertStr = (str) => {
 			let out = '';
 			for (let i = 0; i < str.length; i++) {
@@ -130,7 +123,7 @@ export default {
 			let blockSize: number = parseInt((props.size / cells.length).toString());
 			let offset = (props.size - blockSize * cells.length) / 2;
 
-			ctx.scale(scale.value, scale.value);
+			ctx.scale(1, 1);
 
 			// 清空画布
 			ctx.draw();
@@ -203,23 +196,13 @@ export default {
 
 		}
 
-		// 获取屏幕宽度，计算与设计稿之间的比例
-
-		Taro.getSystemInfo({
-			success: res => {
-				windowWidth.value = res.windowWidth;
-				pixelRatio.value = res.pixelRatio;
-
-				// 立即执行一次绘图方法
-				drawer();
-			}
-		})
+		// 立即执行一次绘图方法
+		drawer();
 
 		// 监视内容改变，再次绘图
 		watch(content, (val, oldVal) => {
 			drawer();
 		})
-
 
 		return () => h(View, mergeProps({
 			class: ["s-qrcode"],

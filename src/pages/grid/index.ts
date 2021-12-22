@@ -30,7 +30,7 @@ export default {
 				default: () => Array.apply(null, { length: 12 }).map((v, k) => {
 					return h(SGridItem, {}, {
 						default: () => [
-							h(SIcon, { size: 36 }),
+							h(SIcon, { size: 18 }),
 							"item"
 						]
 					})

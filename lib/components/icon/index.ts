@@ -12,7 +12,7 @@ export default {
 		},
 		size: {
 			type: [String, Number],
-			default: 48,
+			default: 24,
 		},
 		type: {
 			type: String,

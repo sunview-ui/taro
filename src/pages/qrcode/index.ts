@@ -18,7 +18,7 @@ export default {
 				})
 			}),
 			h(SPanel, {}, {
-				default: () => h(SQRCode, { content: content.value, size: 512 }),
+				default: () => h(SQRCode, { content: content.value, size: 240 }),
 			}),
 			h(SPanel, {title: "输入文字以改变二维码内容"}, {
 				default: () => h(SForm, {}, {

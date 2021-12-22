@@ -21,7 +21,7 @@ export default {
 				default: () => icons.map((value: string) => {
 					return h(SGridItem, { class: "item" }, {
 						default: () => [
-							h(SIcon, { class: "icon", icon: value, size: 64 }),
+							h(SIcon, { class: "icon", icon: value, size: 32 }),
 							h(View, { class: "title" }, value)
 						]
 					})

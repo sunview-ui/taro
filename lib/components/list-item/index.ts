@@ -97,7 +97,7 @@ export default {
 			props.icon ? h(SIcon, {
 				class: "s-list-item-icon",
 				icon: props.icon,
-				size: 28
+				size: 12
 			}) : '',
 
 			props.inline ? [
@@ -112,7 +112,7 @@ export default {
 			}, slots.extra?.()) : '',
 			props.arrow ? h(View, {
 				class: "s-list-item-arrow"
-			}, h(SIcon, { icon: 'right', size: 24 })) : ''
+			}, h(SIcon, { icon: 'right', size: 12 })) : ''
 		])
 	}
 }
