@@ -1,0 +1,92 @@
+@import '../../styles/variable.scss';
+
+.s-input {
+	border: 1rpx solid transparent;
+	background: $color-bg-base;
+	color: $color-text-base;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+	padding: 0 $spacing-h-lg;
+	font-size: $font-size-base;
+	line-height: $font-size-base;
+	overflow: hidden;
+
+	&.s-input-focus {
+		border-color: $color-primary;
+		background: transparent;
+	}
+
+	&.s-input-disabled {
+		background: $color-bg-grey;
+		color: $color-text-disabled;
+	}
+
+	&.s-input-round {
+		border-radius: 12rpx;
+	}
+
+	&.s-input-size-default {
+		height: 72rpx;
+
+		&.s-input-circle {
+			border-radius: 72rpx;
+		}
+	}
+
+	&.s-input-size-small {
+		height: 60rpx;
+
+		&.s-input-circle {
+			border-radius: 60rpx;
+		}
+	}
+
+	&.s-input-size-large {
+		height: 96rpx;
+
+		&.s-input-circle {
+			border-radius: 96rpx;
+		}
+	}
+
+	.s-input-icon {
+		margin-right: $spacing-h-lg;
+	}
+
+	.s-input-title {
+		margin-right: $spacing-h-lg;
+	}
+
+	.s-input-content {
+		margin-right: $spacing-h-lg;
+
+		text-align: right;
+		flex: 1;
+	}
+
+	.s-input-placeholder {
+		margin-right: $spacing-h-lg;
+
+		text-align: right;
+		flex: 1;
+		color: $color-text-placeholder;
+	}
+
+	.s-input-clear {
+		margin-right: $spacing-h-lg;
+	}
+
+	.s-input-extra {
+		margin-right: $spacing-h-lg;
+
+		.s-button-plain {
+			border: unset;
+		}
+	}
+
+	&>view:nth-last-child(1) {
+		margin-right: -$spacing-h-lg;
+	}
+}

@@ -1,0 +1,27 @@
+@import "../../styles/variable.scss";
+@import "./iconfont.scss";
+
+.s-icon {
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+
+	&.s-icon-type-default {}
+
+	&.s-icon-type-primary {
+		color: $color-primary;
+	}
+
+	&.s-icon-type-success {
+		color: $color-success;
+	}
+
+	&.s-icon-type-warning {
+		color: $color-warning;
+	}
+
+	&.s-icon-type-danger {
+		color: $color-danger;
+	}
+}

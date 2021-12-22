@@ -1,0 +1,59 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "彩色图标",
+          "pathName": "pages/color-icon/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "图标",
+          "pathName": "pages/icon/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "按钮",
+          "pathName": "pages/button/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "加载指示器",
+          "pathName": "pages/spin/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "浮动按钮",
+          "pathName": "pages/fab/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "表单",
+          "pathName": "pages/form/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "模态框",
+          "pathName": "pages/modal/index",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,296 @@
+@import '../../styles/variable.scss';
+
+.s-button {
+	/* RESET */
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	color: $color-text-base;
+	font-size: $font-size-base;
+	border: 1px solid transparent;
+	border-radius: 0;
+	outline: none;
+	box-sizing: border-box;
+
+	&.s-button-full {
+		display: flex;
+	}
+
+	/* RESET AFTER */
+	&::after {
+		border: none;
+		outline: none;
+	}
+
+	&.s-button-disabled {
+		opacity: $opacity-disabled;
+	}
+
+	&.s-button-no-border {
+		border: none !important;
+	}
+
+	.s-button-spin {
+		margin-right: $spacing-h-md;
+		display: inline-flex;
+	}
+
+	.s-button-icon {
+		margin-right: $spacing-h-md;
+		display: inline-flex;
+
+		&.s-button-icon-alone {
+			margin-right: unset;
+		}
+	}
+
+	&.s-button-text {
+		border: unset !important;
+		background: unset !important;
+		padding: unset !important;
+		margin: unset !important;
+		height: unset !important;
+		display: inline-flex;
+	}
+
+
+	&.s-button-type-default {
+		background: $color-bg-grey;
+		border-color: $color-border-base;
+
+		&:active {
+			background: $color-border-lighter;
+		}
+
+		&.s-button-disabled:active {
+			background: transparent;
+		}
+
+		&.s-button-plain {
+			background: transparent;
+			color: $color-text-base;
+
+			&.s-button-plain:active {
+				background: $color-border-lighter;
+			}
+
+			&.s-button-disabled:active {
+				background: transparent;
+			}
+
+			.s-spin-icon__ring {
+				border-top-color: $color-text-base;
+			}
+		}
+
+		&.s-button-text {
+			color: $color-text-base;
+		}
+
+		.s-spin-icon__ring {
+			border-top-color: dark($color-text-base, 30%);
+		}
+
+	}
+
+	&.s-button-type-primary {
+		background: linear-gradient(to left bottom, light($color-primary, 20%) 5%, $color-primary);
+		border-color: $color-primary;
+		color: #fff;
+
+		&:active {
+			background: linear-gradient(to left bottom, $color-primary 5%, dark($color-primary, 20));
+		}
+
+		&.s-button-disabled:active {
+			background: linear-gradient(to left bottom, light($color-primary, 20%) 5%, $color-primary);
+		}
+
+		&.s-button-plain {
+			background: transparent;
+			color: $color-primary;
+
+			&.s-button-plain:active {
+				background: light($color-primary, 70%);
+			}
+
+			&.s-button-disabled:active {
+				background: transparent;
+			}
+
+			.s-spin-icon__ring {
+				border-top-color: $color-primary;
+			}
+		}
+
+		&.s-button-text {
+			color: $color-primary;
+		}
+
+		.s-spin-icon__ring {
+			border-top-color: dark($color-primary, 30%);
+		}
+
+	}
+
+	&.s-button-type-success {
+		background: linear-gradient(to left bottom, light($color-success, 20%) 5%, $color-success);
+		border-color: $color-success;
+		color: #fff;
+
+		&:active {
+			background: linear-gradient(to left bottom, $color-success 5%, dark($color-success, 20));
+		}
+
+		&.s-button-disabled:active {
+			background: linear-gradient(to left bottom, light($color-success, 20%) 5%, $color-success);
+		}
+
+		&.s-button-plain {
+			background: transparent;
+			color: $color-success;
+
+			&.s-button-plain:active {
+				background: light($color-success, 70%);
+			}
+
+			&.s-button-disabled:active {
+				background: transparent;
+			}
+
+			.s-spin-icon__ring {
+				border-top-color: $color-success;
+			}
+		}
+
+		&.s-button-text {
+			color: $color-success;
+		}
+
+		.s-spin-icon__ring {
+			border-top-color: dark($color-success, 30%);
+		}
+
+	}
+
+	&.s-button-type-warning {
+		background: linear-gradient(to left bottom, light($color-warning, 20%) 5%, $color-warning);
+		border-color: $color-warning;
+		color: #fff;
+
+		&:active {
+			background: linear-gradient(to left bottom, $color-warning 5%, dark($color-warning, 20));
+		}
+
+		&.s-button-disabled:active {
+			background: linear-gradient(to left bottom, light($color-warning, 20%) 5%, $color-warning);
+		}
+
+		&.s-button-plain {
+			background: transparent;
+			color: $color-warning;
+
+			&.s-button-plain:active {
+				background: light($color-warning, 70%);
+			}
+
+			&.s-button-disabled:active {
+				background: transparent;
+			}
+
+			.s-spin-icon__ring {
+				border-top-color: $color-warning;
+			}
+		}
+
+		&.s-button-text {
+			color: $color-warning;
+		}
+
+		.s-spin-icon__ring {
+			border-top-color: dark($color-warning, 20%);
+		}
+
+	}
+
+	&.s-button-type-danger {
+		background: linear-gradient(to left bottom, light($color-danger, 20%) 5%, $color-danger);
+		border-color: $color-danger;
+		color: #fff;
+
+		&:active {
+			background: linear-gradient(to left bottom, $color-danger 5%, dark($color-danger, 20));
+		}
+
+		&.s-button-disabled:active {
+			background: linear-gradient(to left bottom, light($color-danger, 20%) 5%, $color-danger);
+		}
+
+		&.s-button-plain {
+			background: transparent;
+			color: $color-danger;
+
+			&.s-button-plain:active {
+				background: light($color-danger, 70%);
+			}
+
+			&.s-button-disabled:active {
+				background: transparent;
+			}
+
+			.s-spin-icon__ring {
+				border-top-color: $color-danger;
+			}
+		}
+
+		&.s-button-text {
+			color: $color-danger;
+		}
+
+		.s-spin-icon__ring {
+			border-top-color: dark($color-danger, 20%);
+		}
+
+	}
+
+	&.s-button-size-default {
+		height: 72rpx;
+
+		&.s-button-round {
+			border-radius: 12rpx;
+		}
+
+		&.s-button-circle {
+			// min-width: 72rpx;
+			border-radius: 72rpx;
+		}
+	}
+
+	&.s-button-size-small {
+		height: 60rpx;
+
+		&.s-button-round {
+			border-radius: 12rpx;
+		}
+
+		&.s-button-circle {
+			// min-width: 60rpx;
+			border-radius: 60rpx;
+		}
+	}
+
+	&.s-button-size-large {
+		height: 96rpx;
+
+		&.s-button-round {
+			border-radius: 12rpx;
+		}
+
+		&.s-button-circle {
+			// min-width: 96rpx;
+			border-radius: 96rpx;
+		}
+	}
+
+}

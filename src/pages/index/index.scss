@@ -1,0 +1,45 @@
+@import "../../../lib/styles/variable.scss";
+
+.page-index {
+	.page-header {
+		height: 260rpx;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: $color-text-title;
+
+		.title {
+			margin-bottom: $spacing-h-xl;
+		}
+
+		.description {
+			font-size: 24rpx;
+			color: $color-text-secondary;
+			margin-bottom: $spacing-h-md;
+		}
+
+		.version {
+			font-size: 24rpx;
+			color: $color-text-secondary;
+		}
+	}
+
+	.title-wrapper {
+		display: flex;
+		flex-direction: column;
+		line-height: 1.5em;
+		margin: 20rpx 0;
+
+		.title {}
+
+		.content {
+			font-size: 24rpx;
+			color: $color-text-secondary;
+		}
+	}
+
+	.extra-wrapper {
+		color: $color-text-secondary;
+	}
+}

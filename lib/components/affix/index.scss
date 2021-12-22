@@ -1,0 +1,8 @@
+@import '../../styles/variable.scss';
+
+.s-affix {
+	.s-affix-fixed {
+		position: fixed;
+		z-index: $zindex-affix;
+	}
+}

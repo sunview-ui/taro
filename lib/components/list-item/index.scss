@@ -1,0 +1,86 @@
+@import '../../styles/variable.scss';
+
+.s-list-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+	margin: 0 $spacing-h-lg;
+	font-size: $font-size-base;
+	line-height: $font-size-base;
+	overflow: hidden;
+
+	&.s-list-item-no-margin {
+		margin: 0;
+	}
+
+	&.s-list-item-round {
+		border-radius: 12rpx;
+	}
+
+	&.s-list-item-size-default {
+		min-height: 72rpx;
+
+		&.s-list-item-circle {
+			border-radius: 72rpx;
+		}
+	}
+
+	&.s-list-item-size-small {
+		min-height: 60rpx;
+
+		&.s-list-item-circle {
+			border-radius: 60rpx;
+		}
+	}
+
+	&.s-list-item-size-large {
+		min-height: 96rpx;
+
+		&.s-list-item-circle {
+			border-radius: 96rpx;
+		}
+	}
+
+	.s-list-item-icon {
+		margin-right: $spacing-h-lg;
+	}
+
+	.s-list-item-main {
+		margin-top: $spacing-v-md;
+		margin-bottom: $spacing-v-md;
+		margin-right: $spacing-h-lg;
+		flex: 1;
+
+		.s-list-item-title {
+			margin-bottom: $spacing-v-sm;
+		}
+
+		.s-list-item-content {
+			font-size: 24rpx;
+		}
+	}
+
+	.s-list-item-title {
+		margin-right: $spacing-h-lg;
+	}
+
+	.s-list-item-content {
+		margin-right: $spacing-h-lg;
+		color: $color-text-secondary;
+		flex: 1;
+	}
+
+	.s-list-item-extra {
+		margin-right: $spacing-h-lg;
+	}
+
+	.s-list-item-arrow {
+		color: $color-text-secondary;
+		margin-right: $spacing-h-lg;
+	}
+
+	&>View:nth-last-child(1) {
+		margin-right: 0;
+	}
+}

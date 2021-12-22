@@ -1,0 +1,105 @@
+@import '../../styles/variable.scss';
+
+.s-tag {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	color: $color-text-base;
+	font-size: $font-size-base;
+	border: 1px solid transparent;
+	border-radius: 0;
+	box-sizing: border-box;
+	padding: $margin-xxs $margin-sm;
+
+	&.s-tag-type-default {
+		background: linear-gradient(to left bottom, light($color-text-base, 20%) 5%, $color-text-base);
+		color: #fff;
+
+		&.s-tag-plain {
+			color: $color-text-base;
+			border-color: $color-text-base;
+			background: transparent;
+		}
+	}
+
+
+	&.s-tag-type-primary {
+		background: linear-gradient(to left bottom, light($color-primary, 20%) 5%, $color-primary);
+		color: #fff;
+
+		&.s-tag-plain {
+			color: $color-primary;
+			border-color: $color-primary;
+			background: transparent;
+		}
+	}
+
+	&.s-tag-type-success {
+		background: linear-gradient(to left bottom, light($color-success, 20%) 5%, $color-success);
+		border-color: $color-success;
+		color: #fff;
+
+		&.s-tag-plain {
+			color: $color-success;
+			border-color: $color-success;
+			background: transparent;
+		}
+	}
+
+	&.s-tag-type-warning {
+		background: linear-gradient(to left bottom, light($color-warning, 20%) 5%, $color-warning);
+		border-color: $color-warning;
+		color: #fff;
+
+		&.s-tag-plain {
+			color: $color-warning;
+			border-color: $color-warning;
+			background: transparent;
+		}
+	}
+
+	&.s-tag-type-danger {
+		background: linear-gradient(to left bottom, light($color-danger, 20%) 5%, $color-danger);
+		border-color: $color-danger;
+		color: #fff;
+
+		&.s-tag-plain {
+			color: $color-danger;
+			border-color: $color-danger;
+			background: transparent;
+		}
+	}
+
+	&.s-tag-round {
+		border-radius: 12rpx;
+	}
+
+	&.s-tag-size-default {
+		padding: $margin-xxs $margin-sm;
+
+		&.s-tag-circle {
+			border-radius: $margin-lg;
+		}
+	}
+
+
+	&.s-tag-size-small {
+		padding: #{$margin-xs / 2} #{$margin / 2};
+		font-size: $font-size-sm;
+
+		&.s-tag-circle {
+			border-radius: $margin;
+		}
+	}
+
+
+	&.s-tag-size-mini {
+		padding: #{$margin-xs / 4} #{$margin/2};
+		font-size: $font-size-xs;
+
+		&.s-tag-circle {
+			border-radius: $margin-xs;
+		}
+	}
+
+}
