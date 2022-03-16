@@ -6,14 +6,16 @@ import './index.scss'
 
 export default {
 	setup() {
+		return {
+			levels :[1, 2, 3, 4, 5, 6, 7, 8, 9],
+			types :["default", "primary", "success", "warning", "danger"],
+			lineTypes : ["default", "primary", "success", "warning", "danger"],
+			lines :[true, false]
+		}
+	},
+	render() {
 
-		let levels = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-		let types = ["default", "primary", "success", "warning", "danger"];
-		let lineTypes = types;
-		let lines = [true, false];
-
-
-		return () => h(View, { class: ['page', 'page-heading'] }, {
+		return h(View, { class: ['page', 'page-heading'] }, {
 			default: () => [
 				h(SList, {}, {
 					default: () => h(SListItem, { inline: false }, {
@@ -22,10 +24,10 @@ export default {
 					})
 				}),
 				h(SList, { noPadding: true, gutterLine: false }, {
-					default: () => lines.map((line, lineKey) => {
-						return types.map((type, typeKey) => {
-							return lineTypes.map((lineType, lineTypeKey) => {
-								return levels.map((level, levelKey) => {
+					default: () => this.lines.map((line, lineKey) => {
+						return this.types.map((type, typeKey) => {
+							return this.lineTypes.map((lineType, lineTypeKey) => {
+								return this.levels.map((level, levelKey) => {
 									return h(SListItem, {}, {
 										content: () => h(SHeading, { level, type, line, lineType }, { default: () => "我是一个标题" })
 									})

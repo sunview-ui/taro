@@ -57,10 +57,10 @@
 
 	&.s-button-type-default {
 		background: $color-bg-grey;
-		border-color: $color-border-base;
+		border-color: $color-bg-grey;
 
 		&:active {
-			background: $color-border-lighter;
+			background: $color-bg-grey;
 		}
 
 		&.s-button-disabled:active {
@@ -72,7 +72,7 @@
 			color: $color-text-base;
 
 			&.s-button-plain:active {
-				background: $color-border-lighter;
+				background: $color-bg-grey;
 			}
 
 			&.s-button-disabled:active {
@@ -80,7 +80,7 @@
 			}
 
 			.s-spin-icon__ring {
-				border-top-color: $color-text-base;
+				border-top-color: $color-bg-grey;
 			}
 		}
 
@@ -89,22 +89,26 @@
 		}
 
 		.s-spin-icon__ring {
-			border-top-color: dark($color-text-base, 30%);
+			border-top-color: dark($color-bg-grey, 30%);
 		}
 
 	}
 
 	&.s-button-type-primary {
-		background: linear-gradient(to left bottom, light($color-primary, 20%) 5%, $color-primary);
+		// background: linear-gradient(to left bottom, light($color-primary, 20%) 5%, $color-primary);
+		background: $color-primary;
 		border-color: $color-primary;
 		color: #fff;
 
 		&:active {
-			background: linear-gradient(to left bottom, $color-primary 5%, dark($color-primary, 20));
+			// background: linear-gradient(to left bottom, $color-primary 5%, dark($color-primary, 20));
+			background: $color-primary;
 		}
 
 		&.s-button-disabled:active {
-			background: linear-gradient(to left bottom, light($color-primary, 20%) 5%, $color-primary);
+			// background: linear-gradient(to left bottom, light($color-primary, 20%) 5%, $color-primary);
+			background: $color-primary;
+
 		}
 
 		&.s-button-plain {
@@ -135,16 +139,19 @@
 	}
 
 	&.s-button-type-success {
-		background: linear-gradient(to left bottom, light($color-success, 20%) 5%, $color-success);
+		// background: linear-gradient(to left bottom, light($color-success, 20%) 5%, $color-success);
+		background: $color-success;
 		border-color: $color-success;
 		color: #fff;
 
 		&:active {
-			background: linear-gradient(to left bottom, $color-success 5%, dark($color-success, 20));
+			// background: linear-gradient(to left bottom, $color-success 5%, dark($color-success, 20));
+			background: $color-success;
 		}
 
 		&.s-button-disabled:active {
-			background: linear-gradient(to left bottom, light($color-success, 20%) 5%, $color-success);
+			// background: linear-gradient(to left bottom, light($color-success, 20%) 5%, $color-success);
+			background: $color-success;
 		}
 
 		&.s-button-plain {
@@ -175,16 +182,19 @@
 	}
 
 	&.s-button-type-warning {
-		background: linear-gradient(to left bottom, light($color-warning, 20%) 5%, $color-warning);
+		// background: linear-gradient(to left bottom, light($color-warning, 20%) 5%, $color-warning);
+		background: $color-warning;
 		border-color: $color-warning;
 		color: #fff;
 
 		&:active {
-			background: linear-gradient(to left bottom, $color-warning 5%, dark($color-warning, 20));
+			// background: linear-gradient(to left bottom, $color-warning 5%, dark($color-warning, 20));
+			background: $color-warning;
 		}
 
 		&.s-button-disabled:active {
-			background: linear-gradient(to left bottom, light($color-warning, 20%) 5%, $color-warning);
+			// background: linear-gradient(to left bottom, light($color-warning, 20%) 5%, $color-warning);
+			background: $color-warning;
 		}
 
 		&.s-button-plain {
@@ -215,16 +225,19 @@
 	}
 
 	&.s-button-type-danger {
-		background: linear-gradient(to left bottom, light($color-danger, 20%) 5%, $color-danger);
-		border-color: $color-danger;
+		// background: linear-gradient(to left bottom, light($color-danger, 20%) 5%, $color-danger);
+			background: $color-danger;
+			border-color: $color-danger;
 		color: #fff;
 
 		&:active {
-			background: linear-gradient(to left bottom, $color-danger 5%, dark($color-danger, 20));
+			// background: linear-gradient(to left bottom, $color-danger 5%, dark($color-danger, 20));
+			background: $color-danger;
 		}
 
 		&.s-button-disabled:active {
-			background: linear-gradient(to left bottom, light($color-danger, 20%) 5%, $color-danger);
+			// background: linear-gradient(to left bottom, light($color-danger, 20%) 5%, $color-danger);
+			background: $color-danger;
 		}
 
 		&.s-button-plain {

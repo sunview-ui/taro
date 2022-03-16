@@ -29,7 +29,7 @@ export default {
 		}
 	},
 	setup(props, { attrs }) {
-		console.log(props.height);
+		// console.log(props.height);
 		return () => h(View, mergeProps({
 			class: ["s-empty"],
 			style: {

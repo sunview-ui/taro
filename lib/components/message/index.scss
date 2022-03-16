@@ -11,6 +11,11 @@
 	color: $color-white;
 	font-size: $font-size-sm;
 
+	&.s-message-type-default {
+		color: $color-text-base;
+		background: $color-bg-base;
+	}
+
 	&.s-message-type-primary {
 		background: $color-primary;
 	}

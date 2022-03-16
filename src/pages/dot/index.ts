@@ -4,9 +4,13 @@ import { h } from '@vue/runtime-core'
 import './index.scss'
 export default {
 	setup() {
-		let types = ['default', 'primary', 'success', 'warning', 'danger'];
-		let sizes = ['small', 'default', 'large'];
-		return () => [
+		return {
+			types: ['default', 'primary', 'success', 'warning', 'danger'],
+			sizes: ['small', 'default', 'large']
+		}
+	},
+	render() {
+		return [
 			h(View, { class: ['page', 'page-dot'] }, [
 				h(SList, {}, {
 					default: () => h(SListItem, { inline: false }, {
@@ -16,15 +20,15 @@ export default {
 				}),
 				h(SList, {}, {
 					default: () => [
-						types.map((type, typeKey) => {
-							return sizes.map((size, sizeKey) => {
+						this.types.map((type, typeKey) => {
+							return this.sizes.map((size, sizeKey) => {
 								return h(SListItem, { contentAlign: 'right' }, {
 									title: () => `${type}-${size}`,
 									content: () => h(SDot, { type, size })
 								});
 							})
 						}),
-						h(SListItem, {contentAlign: "right"}, {
+						h(SListItem, { contentAlign: "right" }, {
 							title: () => "custom-color",
 							content: () => h(SDot, { type: 'primary', size: 'large', color: "#13c2c2" })
 						})

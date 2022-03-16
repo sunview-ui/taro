@@ -8,8 +8,9 @@ import LIST from './list'
 
 export default {
 	setup() {
-
-		let list: Array<any> = LIST;
+		let handleSelect = (e) => {
+			console.log("HANDLE SELECT, SELETED", e);
+		}
 
 		let itemRender = (item, index, dataKey, dataValue) => {
 			return item[dataKey] ? h(View, {
@@ -33,20 +34,23 @@ export default {
 			]) : "";
 		}
 
-		let handleSelect = (e) => {
-			console.log("HANDLE SELECT, SELETED", e);
+		return {
+			list: LIST,
+			itemRender,
+			handleSelect
 		}
-
-		return () => h(View, { class: ['page', 'page-indexes'] }, [
+	},
+	render() {
+		return h(View, { class: ['page', 'page-indexes'] }, [
 			h(SIndexes, {
-				list,
+				list: this.list,
 				dataKey: "id",
 				dataValue: "workName",
 				showSearch: true,
 				showToast: true,
 				// vibrate: true,
-				itemRender,
-				onSelect: handleSelect,
+				itemRender: this.itemRender,
+				onSelect: this.handleSelect,
 			})
 		])
 	}

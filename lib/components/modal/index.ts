@@ -43,9 +43,14 @@ export default {
 			type: Boolean,
 			default: false
 		},
-		useFooter: {
-			type: Boolean,
-			default: true,
+		actionPosition: {
+			type: String,
+			default: "default",
+			validator: (val) =>
+				[
+					"top",
+					"bottom",
+				].includes(val),
 		},
 		showConfirm: {
 			type: Boolean,
@@ -57,7 +62,7 @@ export default {
 		},
 		showClose: {
 			type: Boolean,
-			default: true,
+			default: false,
 		},
 		showMask: {
 			type: Boolean,
@@ -164,13 +169,13 @@ export default {
 				class: ['s-modal-inner', ...computedFill.value]
 			}, [
 				h(View, { class: ["s-modal-inner-action"] }, [
-					!props.useFooter ? h(View, { class: ["s-modal-inner-action-cancel-wrapper"] }, [
+					props.actionPosition == 'top' ? h(View, { class: ["s-modal-inner-action-cancel-wrapper"] }, [
 						props.showCancel ? h(Text, { class: ["s-modal-inner-action-cancel", `s-modal-inner-action-${props.cancelType}`], onTap: handleCancel }, props.cancelText) : undefined
 					]) : "",
-					!props.useFooter ? h(View, { class: ["s-modal-inner-action-confirm-wrapper"] }, [
+					props.actionPosition == 'top' ? h(View, { class: ["s-modal-inner-action-confirm-wrapper"] }, [
 						props.showConfirm ? h(Text, { class: ["s-modal-inner-action-confirm", `s-modal-inner-action-${props.confirmType}`], onTap: handleConfirm }, props.confirmText) : undefined
 					]) : "",
-					!props.useFooter && !props.showCancel && !props.showConfirm && props.showClose ? h(View, { class: ["s-modal-inner-action-close-wrapper"] }, [
+					 props.showClose ? h(View, { class: ["s-modal-inner-action-close-wrapper"] }, [
 						h(SIcon, { class: ['s-modal-inner-action-close'], icon: 'close', size: 32, onTap: handleClose })
 					]) : undefined
 				]),
@@ -180,14 +185,14 @@ export default {
 				h(View, {
 					class: ['s-modal-inner-content']
 				}, { default: () => slots.default ? slots.default?.() : props.content }),
-				props.useFooter ? h(View, {
-					class: ['s-modal-inner-footer-action']
+				props.actionPosition != 'top' ? h(View, {
+					class: ['s-modal-inner-bottom-action']
 				}, [
-					props.showCancel ? h(View, { class: ["s-modal-inner-footer-action-cancel-wrapper"] }, [
-						h(SButton, { class: ["s-modal-inner-footer-action-cancel"], type: props.cancelType, size: 'large', noBorder: true, full: true, onTap: handleCancel }, { default: () => props.cancelText })
+					props.showCancel ? h(View, { class: ["s-modal-inner-bottom-action-cancel-wrapper"] }, [
+						h(SButton, { class: ["s-modal-inner-bottom-action-cancel"], type: props.cancelType, size: 'large', noBorder: true, full: true, onTap: handleCancel }, { default: () => props.cancelText })
 					]) : undefined,
-					props.showConfirm ? h(View, { class: ["s-modal-inner-footer-action-confirm-wrapper"] }, [
-						h(SButton, { class: ["s-modal-inner-footer-action-confirm"], type: props.confirmType, size: 'large', noBorder: true, full: true, onTap: handleConfirm }, { default: () => props.confirmText })
+					props.showConfirm ? h(View, { class: ["s-modal-inner-bottom-action-confirm-wrapper"] }, [
+						h(SButton, { class: ["s-modal-inner-bottom-action-confirm"], type: props.confirmType, size: 'large', noBorder: true, full: true, onTap: handleConfirm }, { default: () => props.confirmText })
 					]) : undefined
 				]) : undefined
 			]),

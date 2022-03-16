@@ -60,7 +60,7 @@
 	}
 
 	.s-input-content {
-		margin-right: $spacing-h-lg;
+		margin-right: 0;
 
 		text-align: right;
 		flex: 1;
@@ -79,14 +79,18 @@
 	}
 
 	.s-input-extra {
-		margin-right: $spacing-h-lg;
+		margin-left: $spacing-h-lg;
+		margin-right: -$spacing-h-lg;
 
 		.s-button-plain {
 			border: unset;
 		}
+		button {
+			height: inherit;
+		}
 	}
 
-	&>view:nth-last-child(1) {
-		margin-right: -$spacing-h-lg;
-	}
+	// &>view:nth-last-child(1) {
+	// 	margin-right: 0;
+	// }
 }

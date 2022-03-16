@@ -1,12 +1,12 @@
 {
     "miniprogramRoot": "dist/",
-    "projectname": "sunview-taro",
+    "projectname": "sunview-ui-taro",
     "description": "SunView UI for Taro in Vue 3.0",
     "appid": "wxdeed4447241ab73e",
     "setting": {
         "urlCheck": false,
         "es6": false,
-        "enhance": false,
+        "enhance": true,
         "postcss": false,
         "preloadBackgroundData": false,
         "minified": false,
@@ -30,16 +30,17 @@
             "disablePlugins": [],
             "outputPath": ""
         },
-        "enableEngineNative": false,
         "useIsolateContext": false,
         "userConfirmedBundleSwitch": false,
         "packNpmManually": false,
         "packNpmRelationList": [],
         "minifyWXSS": true,
         "disableUseStrict": false,
+        "minifyWXML": true,
         "showES6CompileOption": false,
         "useCompilerPlugins": false
     },
     "compileType": "miniprogram",
+    "libVersion": "2.23.0",
     "condition": {}
 }

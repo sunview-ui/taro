@@ -50,11 +50,15 @@ export default {
 		},
 		round: {
 			type: Boolean,
-			default: false
+			default: undefined
 		},
 		circle: {
 			type: Boolean,
-			default: false
+			default: undefined
+		},
+		plain: {
+			type: Boolean,
+			default: undefined
 		},
 		allowClear: {
 			type: Boolean,
@@ -137,10 +141,10 @@ export default {
 		}
 		return () => h(View, {
 			class: ["s-input",
-				`s-input-size-${inject("size") || props.size}`,
-				props.round || inject('round') ? 's-input-round' : '',
-				props.circle || inject('circle') ? 's-input-circle' : '',
-				props.plain || inject('plain') ? 's-input-plain' : '',
+				`s-input-size-${props.size, props.size || inject("size", () => props.size)}`,
+				props.round || inject('round', () => props.round) ? 's-input-round' : '',
+				props.circle || inject('circle', () => props.circle) ? 's-input-circle' : '',
+				props.plain || inject('plain', () => props.plain) ? 's-input-plain' : '',
 				props.disabled ? 's-input-disabled' : '',
 				props.readonly ? 's-input-readonly' : '',
 				isFocus.value ? 's-input-focus' : ''

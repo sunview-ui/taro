@@ -12,19 +12,20 @@
 	padding: $margin-xxs $margin-sm;
 
 	&.s-tag-type-default {
-		background: linear-gradient(to left bottom, light($color-text-base, 20%) 5%, $color-text-base);
-		color: #fff;
+		// background: linear-gradient(to left bottom, light($color-text-base, 20%) 5%, $color-text-base);
+		background: $color-bg-base;
+		color: $color-text-secondary;
 
 		&.s-tag-plain {
-			color: $color-text-base;
-			border-color: $color-text-base;
+			border-color: $color-bg-grey;
 			background: transparent;
 		}
 	}
 
 
 	&.s-tag-type-primary {
-		background: linear-gradient(to left bottom, light($color-primary, 20%) 5%, $color-primary);
+		// background: linear-gradient(to left bottom, light($color-primary, 20%) 5%, $color-primary);
+		background: $color-primary;
 		color: #fff;
 
 		&.s-tag-plain {
@@ -35,7 +36,8 @@
 	}
 
 	&.s-tag-type-success {
-		background: linear-gradient(to left bottom, light($color-success, 20%) 5%, $color-success);
+		// background: linear-gradient(to left bottom, light($color-success, 20%) 5%, $color-success);
+		background: $color-success;
 		border-color: $color-success;
 		color: #fff;
 
@@ -47,7 +49,8 @@
 	}
 
 	&.s-tag-type-warning {
-		background: linear-gradient(to left bottom, light($color-warning, 20%) 5%, $color-warning);
+		// background: linear-gradient(to left bottom, light($color-warning, 20%) 5%, $color-warning);
+		background: $color-warning;
 		border-color: $color-warning;
 		color: #fff;
 
@@ -59,7 +62,8 @@
 	}
 
 	&.s-tag-type-danger {
-		background: linear-gradient(to left bottom, light($color-danger, 20%) 5%, $color-danger);
+		// background: linear-gradient(to left bottom, light($color-danger, 20%) 5%, $color-danger);
+		background: $color-danger;
 		border-color: $color-danger;
 		color: #fff;
 

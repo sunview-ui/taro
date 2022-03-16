@@ -6,7 +6,12 @@ import './index.scss'
 
 export default {
 	setup() {
-		return () => h(View, { class: ['page', 'page-empty'] }, [
+		return {
+
+		}
+	},
+	render() {
+		return h(View, { class: ['page', 'page-empty'] }, [
 			h(SList, {}, {
 				default: () => h(SListItem, { inline: false }, {
 					title: () => h(SHeading, { level: 4 }, { default: () => "空提示" }),

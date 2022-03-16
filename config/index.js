@@ -1,14 +1,13 @@
 const path = require("path");
 
 const config = {
-	projectName: 'sunview-taro',
-	date: '2021-3-25',
-	designWidth: 375,
+	projectName: 'sunview-ui-taro',
+	date: '2022-3-15',
+	designWidth: 750,
 	deviceRatio: {
 		640: 2.34 / 2,
 		750: 1,
 		828: 1.81 / 2,
-		375: 2 / 1
 	},
 	sourceRoot: 'src',
 	outputRoot: 'dist',

@@ -4,7 +4,12 @@ import { h } from '@vue/runtime-core'
 import './index.scss'
 export default {
 	setup() {
-		return () => h(View, { class: ['page', 'page-list'] }, [
+		return {
+
+		}
+	},
+	render() {
+		return h(View, { class: ['page', 'page-list'] }, [
 			h(SList, {}, {
 				default: () => h(SListItem, { inline: false }, {
 					title: () => h(SHeading, { level: 4 }, { default: () => "列表" }),

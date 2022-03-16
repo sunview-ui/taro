@@ -26,10 +26,6 @@ export default {
 			type: String,
 			default: "#fff"
 		},
-		showContent: {
-			type: Boolean,
-			default: true
-		},
 		error: {
 			type: Boolean,
 			default: false
@@ -111,6 +107,8 @@ export default {
 		}
 
 		let drawer = () => {
+			// console.log(props.size);
+
 			let qrcode = new QRCodeImpl(-1, QRCodeErrorCorrectLevel[props.level]);
 			qrcode.addData(convertStr(content.value));
 			qrcode.make();
@@ -121,7 +119,12 @@ export default {
 			if (cells === null) return;
 
 			let blockSize: number = parseInt((props.size / cells.length).toString());
+			// console.log(blockSize);
+			// console.log(cells.length);
+			// console.log(blockSize * cells.length);
 			let offset = (props.size - blockSize * cells.length) / 2;
+			// console.log(offset);
+
 
 			ctx.scale(1, 1);
 
@@ -130,7 +133,7 @@ export default {
 
 			// 绘制背景色
 			ctx.setFillStyle(props.backgroundColor);
-			ctx.fillRect(offset, offset, props.size - offset, props.size - offset);
+			ctx.fillRect(0, 0, props.size, props.size);
 
 			if (props.error) {
 				// 计算定位点长度
@@ -143,6 +146,7 @@ export default {
 					}
 				}
 
+				// console.log(locationAreaLength);
 				// 绘制一个只有定位点的二维码
 				ctx.setFillStyle(props.color);
 				for (let i in cells) {
@@ -150,21 +154,21 @@ export default {
 						if (
 							cells[i][j] && (
 								// 左上
-								(locationAreaLength - parseInt(i) > 0 && locationAreaLength - parseInt(j) > 0) ||
+								(locationAreaLength - parseInt(i) > 0 && locationAreaLength - parseInt(j) > 0)
 
 								// 右上
-								(locationAreaLength + parseInt(i) - cells.length >= 0 && locationAreaLength - parseInt(j) > 0) ||
+								|| (locationAreaLength + parseInt(i) - cells.length >= 0 && locationAreaLength - parseInt(j) > 0)
 
 								// 左下
-								(locationAreaLength - parseInt(i) > 0 && locationAreaLength + parseInt(j) - cells[i].length >= 0) ||
+								|| (locationAreaLength - parseInt(i) > 0 && locationAreaLength + parseInt(j) - cells[i].length >= 0)
 
-								// 右下
-								(
-									locationAreaLength - 1 + parseInt(i) - cells.length > 0 &&
-									locationAreaLength - 1 + parseInt(j) - cells[i].length > 0 &&
-									(locationAreaLength - 1) / 3 + parseInt(i) - cells.length < 0 &&
-									(locationAreaLength - 1) / 3 + parseInt(j) - cells[i].length < 0
-								)
+								// // 右下
+								// || (
+								// 	locationAreaLength - 1 + parseInt(i) - cells.length > 0
+								// 	&& locationAreaLength - 1 + parseInt(j) - cells[i].length > 0
+								// 	&& (locationAreaLength - 1) / 3 + parseInt(i) - cells.length < 0
+								// 	&& (locationAreaLength - 1) / 3 + parseInt(j) - cells[i].length < 0
+								// )
 							)
 						) {
 							ctx.fillRect(offset + blockSize * parseInt(i), offset + blockSize * parseInt(j), blockSize, blockSize)
@@ -174,12 +178,16 @@ export default {
 
 				// 绘制错误遮罩层
 				ctx.setFillStyle(convertHexToRGBA(props.errorMaskColor, props.errorMaskOpacity).rgba)
-				ctx.fillRect(offset, offset, props.size - offset, props.size - offset);
+				ctx.fillRect(0, 0, props.size, props.size);
 
 				// 绘制错误提示
 				ctx.setFontSize(props.errorSize);
+				// console.log(props.errorSize);
 				ctx.setFillStyle(props.errorTextColor);
-				ctx.fillText(props.errorMessage, 256 - props.errorSize * props.errorMessage.length / 2, 256 + props.errorSize / 2)
+				// console.log(props.errorTextColor);
+				// console.log(props.errorSize * props.errorMessage.length / 2);
+
+				ctx.fillText(props.errorMessage, (props.size - props.errorSize * props.errorMessage.length) / 2, (props.size + props.errorSize) / 2)
 			} else {
 				// 绘制正常二维码
 				ctx.setFillStyle(props.color);
@@ -206,23 +214,18 @@ export default {
 
 		return () => h(View, mergeProps({
 			class: ["s-qrcode"],
-		}, attrs), [
-			h(View, {
-				class: "s-qrcode-canvas", style: {
-					width: Taro.pxTransform(props.size),
-					height: Taro.pxTransform(props.size),
-				}
-			}, h(Canvas, {
-				canvasId,
-				type: props.type,
-				disableScroll: true,
-				style: {
-					width: 'inherit',
-					height: 'inherit',
-				}
-			})
-			),
-			props.showContent ? h(View, {}, props.content) : ""
-		])
+			style: {
+				width: `${props.size}px`,
+				height: `${props.size}px`,
+			}
+		}, attrs), h(Canvas, {
+			canvasId,
+			type: props.type,
+			disableScroll: true,
+			style: {
+				width: 'inherit',
+				height: 'inherit'
+			}
+		}))
 	}
 }

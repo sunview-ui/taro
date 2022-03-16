@@ -59,6 +59,30 @@
                     "pathName": "pages/qrcode/index",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "钉固",
+                    "pathName": "pages/affix/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "彩色图标",
+                    "pathName": "pages/color-icon/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "标签",
+                    "pathName": "pages/tag/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "消息",
+                    "pathName": "pages/message/index",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }

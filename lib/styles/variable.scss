@@ -1,13 +1,27 @@
 @import "./utils.scss";
 
-$hd: 1;
+$hd: 2;
 
 
 /* Color */
-$color-primary: #2d8cf0 !default;
-$color-success: #13CE66 !default;
-$color-warning: #FFC82C !default;
-$color-danger: #FF4949 !default;
+// $color-primary: #2d8cf0 !default;
+// $color-success: #13CE66 !default;
+// $color-warning: #FFC82C !default;
+// $color-danger: #FF4949 !default;
+
+
+
+// 2022 Olympic
+$color-primary: #4493c3 !default;
+$color-success: #3aa989 !default;
+$color-warning: #f18e03 !default;
+// $color-danger: #f4a69b !default;
+
+// 2008 Olympic
+// $color-primary: #0057a8 !default;
+// $color-success: #008245 !default;
+// $color-warning: #fabe0c !default;
+$color-danger: #d7131a !default;
 
 
 /* The Extra Color */
@@ -47,8 +61,8 @@ $color-link-disabled: #BFBFBF !default;
 
 /* 背景色 */
 $color-bg: #FFF !default;
-$color-bg-base: #FAFBFC !default;
-$color-bg-grey: #f6f6f6 !default;
+$color-bg-base: #f6f6f6 !default;
+$color-bg-grey: #e6e6e6 !default;
 
 // $color-bg-light: #ECF5FD !default;
 // $color-bg-lighter: light($color-bg-light, 50%) !default;

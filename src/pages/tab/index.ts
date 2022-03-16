@@ -6,7 +6,6 @@ import './index.scss'
 
 export default {
 	setup() {
-
 		let tab = reactive({
 			list: [
 				{ key: 'like', name: "我喜欢的" },
@@ -18,12 +17,16 @@ export default {
 			],
 			current: 'fav'
 		});
-
 		let handleChange = (e) => {
 			tab.current = e;
 		}
-
-		return () => h(View, { class: ['page', 'page-tab'] }, [
+		return {
+			tab,
+			handleChange
+		}
+	},
+	render() {
+		return h(View, { class: ['page', 'page-tab'] }, [
 			h(SList, {}, {
 				default: () => h(SListItem, { inline: false }, {
 					title: () => h(SHeading, { level: 4 }, { default: () => "标签切换器" }),
@@ -31,9 +34,9 @@ export default {
 				})
 			}),
 			h(STab, {
-				list: tab.list,
-				current: tab.current,
-				onChange: handleChange
+				list: this.tab.list,
+				current: this.tab.current,
+				onChange: this.handleChange
 			})
 		])
 	}

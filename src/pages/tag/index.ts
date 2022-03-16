@@ -6,18 +6,16 @@ import './index.scss'
 
 export default {
 	setup() {
-
-		let types = ['default', 'primary', 'success', 'warning', 'danger'];
-
-		let sizes = ['small', 'default', 'mini'];
-
-		let plains = [true, false];
-
-		let rounds = [true, false];
-
-		let circles = [true, false];
-
-		return () => h(View, { class: ['page', 'page-tag'] }, [
+		return {
+			types: ['default', 'primary', 'success', 'warning', 'danger'],
+			sizes: ['small', 'default', 'mini'],
+			plains: [true, false],
+			rounds: [true, false],
+			circles: [true, false]
+		}
+	},
+	render() {
+		return h(View, { class: ['page', 'page-tag'] }, [
 			h(SList, {}, {
 				default: () => h(SListItem, { inline: false }, {
 					title: () => h(SHeading, { level: 4 }, { default: () => "标签" }),
@@ -25,11 +23,11 @@ export default {
 				})
 			}),
 			h(SList, {}, {
-				default: () => types.map(
-					type => sizes.map(
-						size => plains.map(
-							plain => circles.map(
-								circle => rounds.map(
+				default: () => this.types.map(
+					type => this.sizes.map(
+						size => this.plains.map(
+							plain => this.circles.map(
+								circle => this.rounds.map(
 									round => h(SListItem, {}, {
 										content: () => h(STag, { type, size, plain, round, circle, title: "标签" })
 									})
@@ -39,7 +37,6 @@ export default {
 					)
 				)
 			})
-
 		])
 	}
 }

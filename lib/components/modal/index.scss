@@ -7,7 +7,8 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	margin: 30rpx;
+	width: 100vw;
+	// margin: 30rpx;
 	z-index: 1000;
 	display: flex;
 	justify-content: center;
@@ -95,6 +96,8 @@
 
 		&.s-modal-fill-y {
 			height: calc(100vh - #{$spacing-h-xl} * 2);
+			display: flex;
+			flex-direction: column;
 		}
 
 		.s-modal-inner-action {
@@ -139,18 +142,22 @@
 
 		}
 
-		.s-modal-inner-footer-action {
+		.s-modal-inner-bottom-action {
 			display: flex;
 			justify-content: space-between;
 			// margin: #{$spacing-h-lg} #{$spacing-v-lg};
 
-			.s-modal-inner-footer-action-cancel-wrapper {
+			button {
+				font-size: $font-size-lg;
+			}
+
+			.s-modal-inner-bottom-action-cancel-wrapper {
 				// margin-left: $spacing-v-lg;
 				width: 50%;
 				flex: 1;
 			}
 
-			.s-modal-inner-footer-action-confirm-wrapper {
+			.s-modal-inner-bottom-action-confirm-wrapper {
 				// margin-right: $spacing-v-lg;
 				width: 50%;
 				flex: 1;
@@ -168,6 +175,7 @@
 
 		.s-modal-inner-content {
 			margin: calc(#{$spacing-h-lg} * 2) calc(#{$spacing-v-lg} * 2);
+			flex:1;
 		}
 	}
 
@@ -182,55 +190,55 @@
 		opacity: $opacity;
 	}
 
-	// &.fade-in {
-	// 	opacity: 1;
-	// 	animation: fade-in;
-	// 	animation-duration: .3s;
-	// 	visibility: visible;
-	// }
+	&.fade-in {
+		opacity: 1;
+		animation: fade-in;
+		animation-duration: .3s;
+		visibility: visible;
+	}
 
-	// &.fade-out {
-	// 	opacity: 0;
-	// 	animation: fade-out;
-	// 	animation-duration: 1s;
+	&.fade-out {
+		opacity: 0;
+		animation: fade-out;
+		animation-duration: 1s;
 
-	// }
+	}
 
-	// @keyframes fade-in {
-	// 	0% {
-	// 		opacity: 0;
-	// 	}
+	@keyframes fade-in {
+		0% {
+			opacity: 0;
+		}
 
-	// 	/*初始状态 透明度为0*/
-	// 	40% {
-	// 		opacity: 0;
-	// 	}
+		/*初始状态 透明度为0*/
+		40% {
+			opacity: 0;
+		}
 
-	// 	/*过渡状态 透明度为0*/
-	// 	100% {
-	// 		opacity: 1;
-	// 	}
+		/*过渡状态 透明度为0*/
+		100% {
+			opacity: 1;
+		}
 
-	// 	/*结束状态 透明度为1*/
-	// }
+		/*结束状态 透明度为1*/
+	}
 
-	// @keyframes fade-out {
-	// 	0% {
-	// 		opacity: 1;
-	// 	}
+	@keyframes fade-out {
+		0% {
+			opacity: 1;
+		}
 
-	// 	/*初始状态 透明度为0*/
-	// 	40% {
-	// 		opacity: 1;
-	// 	}
+		/*初始状态 透明度为0*/
+		40% {
+			opacity: 1;
+		}
 
-	// 	/*过渡状态 透明度为0*/
-	// 	100% {
-	// 		opacity: 0;
-	// 		visibility: hidden;
+		/*过渡状态 透明度为0*/
+		100% {
+			opacity: 0;
+			visibility: hidden;
 
-	// 	}
+		}
 
-	// 	/*结束状态 透明度为1*/
-	// }
+		/*结束状态 透明度为1*/
+	}
 }

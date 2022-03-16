@@ -6,6 +6,11 @@ import './index.scss'
 
 export default {
 	setup() {
+		return {
+
+		}
+	},
+	render() {
 		return () => h(View, { class: ['page', 'page-example'] }, [
 			h(SList, {}, {
 				default: () => h(SListItem, { inline: false }, {
@@ -13,9 +18,6 @@ export default {
 					content: () => "Example"
 				})
 			}),
-			// h(SExample, {}, {
-			// 	default: () => undefined
-			// })
 		])
 	}
 }

@@ -146,7 +146,7 @@ export default {
 						'onUpdate:show': (e) => opened.value = e,
 						position: 'bottom',
 						noMargin: true,
-						useFooter: false,
+						actionPosition: 'top',
 						onClose: handleClose,
 						onConfirm: handleSelect
 					}, {
@@ -156,6 +156,7 @@ export default {
 							},
 							indicatorStyle: 'height: 40px',
 							value: inital.position.value,
+							immediateChange: true,
 							onChange: handleChange
 						}, Array.apply(null, { length: inital.deep }).map((value, key) => {
 							return h(PickerViewColumn, {}, inital.range.value[key].map((rangeValue, rangeKey) => {

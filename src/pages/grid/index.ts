@@ -6,7 +6,10 @@ import './index.scss'
 
 export default {
 	setup() {
-		return () => h(View, { class: ['page', 'page-grid'] }, [
+		return {}
+	},
+	render() {
+		return h(View, { class: ['page', 'page-grid'] }, [
 			h(SList, {}, {
 				default: () => h(SListItem, { inline: false }, {
 					title: () => h(SHeading, { level: 4 }, { default: () => "宫格" }),

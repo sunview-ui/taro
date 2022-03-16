@@ -11,8 +11,13 @@ export default {
 		let openToast = () => {
 			opened.value = true;
 		}
-
-		return () => h(View, { class: ['page', 'page-toast'] }, [
+		return {
+			opened,
+			openToast
+		}
+	},
+	render() {
+		return h(View, { class: ['page', 'page-toast'] }, [
 			h(SList, {}, {
 				default: () => h(SListItem, { inline: false }, {
 					title: () => h(SHeading, { level: 4 }, { default: () => "轻提示" }),
@@ -23,10 +28,10 @@ export default {
 				default: () => h(SButton, {
 					type: "primary",
 					full: true,
-					onTap: openToast
+					onTap: this.openToast
 				}, { default: () => '打开轻提示' }),
 			}),
-			h(SToast, { value: opened.value, 'onUpdate:value': e => opened.value = e, title: "我是一个轻提示", type: 'info' })
+			h(SToast, { value: this.opened, 'onUpdate:value': e => this.opened = e, title: "我是一个轻提示", type: 'info' })
 		])
 	}
 }

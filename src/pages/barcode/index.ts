@@ -6,7 +6,12 @@ import './index.scss'
 
 export default {
 	setup() {
-		return () => h(View, { class: ['page', 'page-barcode'] }, [
+		return {
+			
+		}
+	},
+	render() {
+		return h(View, { class: ['page', 'page-barcode'] }, [
 			h(SList, {}, {
 				default: () => h(SListItem, { inline: false }, {
 					title: () => h(SHeading, { level: 4 }, { default: () => "条形码" }),
