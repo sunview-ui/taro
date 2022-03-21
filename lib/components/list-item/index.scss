@@ -71,6 +71,11 @@
 		flex: 1;
 	}
 
+	.s-list-item-dot {
+		margin-left: calc(-#{$spacing-h-lg} / 2);
+		padding: 0 $spacing-h-lg 20rpx 0;
+	}
+
 	.s-list-item-extra {
 		margin-right: $spacing-h-lg;
 	}
@@ -78,6 +83,8 @@
 	.s-list-item-arrow {
 		color: $color-text-secondary;
 		margin-right: $spacing-h-lg;
+		/* fix */
+		margin-top: -2rpx;
 	}
 
 	&>View:nth-last-child(1) {

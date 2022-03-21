@@ -1,7 +1,7 @@
 import Taro from '@tarojs/taro'
 import { View } from "@tarojs/components"
 import { h, inject, mergeProps } from "@vue/runtime-core"
-import { SIcon } from '..'
+import { SDot, SIcon } from '..'
 
 import './index.scss'
 
@@ -61,6 +61,9 @@ export default {
 			type: String,
 			default: "",
 		},
+		dot: {
+			default: false
+		},
 		loading: {
 			type: Boolean,
 			default: false
@@ -86,6 +89,12 @@ export default {
 			},
 		}, slots.content?.() || props.content);
 
+		let dotRender = () => props.dot ? h(View, {
+			class: "s-list-item-dot", style: {
+				textAlign: props.contentAlign || inject("contentAlign"),
+			},
+		}, h(SDot, props.dot)) : '';
+
 		return () => h(View, mergeProps({
 			class: ["s-list-item",
 				`s-list-item-size-${inject("size") || props.size}`,
@@ -94,16 +103,20 @@ export default {
 				props.noMargin || inject("itemNoMargin") ? 's-list-item-no-margin' : ''
 			],
 		}, attrs), [
-			props.icon ? h(SIcon, {
-				class: "s-list-item-icon",
-				icon: props.icon,
-				size: 12
-			}) : '',
 
+			slots.icon ? h(View, {
+				class: "s-list-item-icon",
+			}, slots.icon()) : (
+				props.icon ? h(SIcon, {
+					class: "s-list-item-icon",
+					icon: props.icon,
+					size: 12
+				}) : ''
+			),
 			props.inline ? [
-				titleRender(), contentRender()
+				titleRender(), contentRender(), dotRender()
 			] : h(View, { class: 's-list-item-main' }, [
-				titleRender(), contentRender()
+				titleRender(), contentRender(), dotRender()
 			]),
 
 
@@ -112,7 +125,7 @@ export default {
 			}, slots.extra?.()) : '',
 			props.arrow ? h(View, {
 				class: "s-list-item-arrow"
-			}, h(SIcon, { icon: 'right', size: 12 })) : ''
+			}, h(SIcon, { icon: 'right', size: 24 })) : ''
 		])
 	}
 }
