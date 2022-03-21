@@ -28,7 +28,7 @@
 	}
 
 	&.s-input-size-default {
-		height: 72rpx;
+		min-height: 72rpx;
 
 		&.s-input-circle {
 			border-radius: 72rpx;
@@ -36,7 +36,7 @@
 	}
 
 	&.s-input-size-small {
-		height: 60rpx;
+		min-height: 60rpx;
 
 		&.s-input-circle {
 			border-radius: 60rpx;
@@ -44,7 +44,7 @@
 	}
 
 	&.s-input-size-large {
-		height: 96rpx;
+		min-height: 96rpx;
 
 		&.s-input-circle {
 			border-radius: 96rpx;
@@ -88,6 +88,10 @@
 		button {
 			height: inherit;
 		}
+	}
+
+	textarea {
+		margin: 20px 0;
 	}
 
 	// &>view:nth-last-child(1) {

@@ -103,29 +103,33 @@ export default {
 				props.noMargin || inject("itemNoMargin") ? 's-list-item-no-margin' : ''
 			],
 		}, attrs), [
+			h(View, { class: "main" }, [
 
-			slots.icon ? h(View, {
-				class: "s-list-item-icon",
-			}, slots.icon()) : (
-				props.icon ? h(SIcon, {
+				slots.icon ? h(View, {
 					class: "s-list-item-icon",
-					icon: props.icon,
-					size: 12
-				}) : ''
-			),
-			props.inline ? [
-				titleRender(), contentRender(), dotRender()
-			] : h(View, { class: 's-list-item-main' }, [
-				titleRender(), contentRender(), dotRender()
+				}, slots.icon()) : (
+					props.icon ? h(SIcon, {
+						class: "s-list-item-icon",
+						icon: props.icon,
+						size: 12
+					}) : ''
+				),
+				props.inline ? [
+					titleRender(), contentRender(), dotRender()
+				] : h(View, { class: 's-list-item-main' }, [
+					titleRender(), contentRender(), dotRender()
+				]),
+
+
+				slots.extra ? h(View, {
+					class: ["s-list-item-extra"],
+				}, slots.extra?.()) : '',
+				props.arrow ? h(View, {
+					class: "s-list-item-arrow"
+				}, h(SIcon, { icon: 'right', size: 24 })) : '',
 			]),
+			slots.description ? h(View, { class: "description" }, slots.description?.()) : ''
 
-
-			slots.extra ? h(View, {
-				class: ["s-list-item-extra"],
-			}, slots.extra?.()) : '',
-			props.arrow ? h(View, {
-				class: "s-list-item-arrow"
-			}, h(SIcon, { icon: 'right', size: 24 })) : ''
 		])
 	}
 }

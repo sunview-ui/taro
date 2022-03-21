@@ -1,6 +1,6 @@
 {
 	"name": "sunview-ui-taro",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"description": "SunView UI for Taro in Vue 3.0",
 	"author": "tuixiujihua",
 	"license": "GPL-3.0-or-later",

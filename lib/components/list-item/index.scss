@@ -2,13 +2,30 @@
 
 .s-list-item {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 	box-sizing: border-box;
 	margin: 0 $spacing-h-lg;
 	font-size: $font-size-base;
 	line-height: $font-size-base;
 	overflow: hidden;
+	padding: $spacing-h-lg 0;
+
+	.main {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.description {
+		width: 100%;
+		font-size: 24rpx;
+		margin: $spacing-h-md 0 0;
+		color: $color-text-secondary;
+		line-height: 1.5em;
+	}
 
 	&.s-list-item-no-margin {
 		margin: 0;
@@ -66,14 +83,13 @@
 	}
 
 	.s-list-item-content {
-		margin-right: $spacing-h-lg;
 		color: $color-text-secondary;
 		flex: 1;
 	}
 
 	.s-list-item-dot {
-		margin-left: calc(-#{$spacing-h-lg} / 2);
-		padding: 0 $spacing-h-lg 20rpx 0;
+		margin-right: calc(-#{$spacing-h-lg} / 2);
+		padding: 0 calc(#{$spacing-h-lg} / 2) 20rpx calc(#{$spacing-h-lg} / 2);
 	}
 
 	.s-list-item-extra {
@@ -82,12 +98,12 @@
 
 	.s-list-item-arrow {
 		color: $color-text-secondary;
-		margin-right: $spacing-h-lg;
+		margin: 0 $spacing-h-lg;
 		/* fix */
 		margin-top: -2rpx;
 	}
 
-	&>View:nth-last-child(1) {
+	&>main>View:nth-last-child(1) {
 		margin-right: 0;
 	}
 }
