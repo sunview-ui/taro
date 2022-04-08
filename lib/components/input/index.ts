@@ -141,10 +141,10 @@ export default {
 		}
 		return () => h(View, {
 			class: ["s-input",
-				`s-input-size-${props.size, props.size || inject("size", () => props.size)}`,
-				props.round || inject('round', () => props.round) ? 's-input-round' : '',
-				props.circle || inject('circle', () => props.circle) ? 's-input-circle' : '',
-				props.plain || inject('plain', () => props.plain) ? 's-input-plain' : '',
+				`s-input-size-${inject("size", props.size)}`,
+				inject('round', props.round) ? 's-input-round' : '',
+				inject('circle', props.circle) ? 's-input-circle' : '',
+				inject('plain', props.plain) ? 's-input-plain' : '',
 				props.disabled ? 's-input-disabled' : '',
 				props.readonly ? 's-input-readonly' : '',
 				isFocus.value ? 's-input-focus' : ''
@@ -159,19 +159,19 @@ export default {
 			h(Text, {
 				class: "s-input-title",
 				style: {
-					width: Taro.pxTransform(props.titleWidth || inject("titleWidth")),
-					textAlign: props.titleAlign || inject("titleAlign"),
+					width: Taro.pxTransform(inject("titleWidth", props.titleWidth) as any),
+					textAlign: inject("titleAlign", props.titleAlign),
 					display: 'flex',
-					justifyContent: { left: 'flex-start', center: 'center', right: 'flex-end' }[props.titleAlign || inject("titleAlign")]
+					justifyContent: { left: 'flex-start', center: 'center', right: 'flex-end' }[inject("titleAlign", props.titleAlign) as any]
 				}
 			}, props.title),
 
 			slots.content ? slots.content() : h(props.type === 'textarea' ? Textarea : Input, mergeProps({
 				class: "s-input-content",
 				style: {
-					textAlign: props.contentAlign || inject("contentAlign"),
+					textAlign: inject("contentAlign", props.contentAlign),
 					// display: 'flex',
-					// justifyContent: { left: 'flex-start', center: 'center', right: 'flex-end' }[props.contentAlign || inject("contentAlign")]
+					justifyContent: { left: 'flex-start', center: 'center', right: 'flex-end' }[inject("contentAlign", props.contentAlign) as any]
 				},
 				value: props.value,
 				disabled: (props.disabled || props.readonly),
