@@ -14,7 +14,20 @@ export default {
 		current: {
 			type: [String, Number],
 			default: ""
-		}
+		},
+		type: {
+			type: String,
+			default: "default",
+			validator: (val) =>
+				[
+					"default",
+					"primary",
+					"success",
+					"warning",
+					"danger",
+					"none"
+				].includes(val),
+		},
 	},
 	setup(props, { attrs, emit }) {
 
@@ -24,12 +37,18 @@ export default {
 		}
 
 		return () => h(ScrollView, mergeProps({
-			class: ["s-tab"],
+			class: [
+				"s-tab",
+				`s-tab-${props.type}`
+			],
 			scrollX: true
 		}, attrs), {
 			default: () => props.list.map((value, key) => {
 				return h(View, {
-					class: ["s-tab-item", props.current == value.key ? 's-tab-item-current' : ''],
+					class: [
+						"s-tab-item",
+						props.current == value.key ? 's-tab-item-current' : ''
+					],
 					onTap: e => handleTap(value.key)
 				}, value.name)
 			})

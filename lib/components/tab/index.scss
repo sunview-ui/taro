@@ -10,18 +10,43 @@
 	padding: 0 $margin;
 	background: $color-white;
 	box-sizing: border-box;
+
 	.s-tab-item {
 		display: inline-flex;
 		justify-content: center;
 		align-items: center;
-		// background: red;
-		// border: 1px solid #ccc;
 		line-height: 2em;
 		margin: $margin;
 		font-size: $font-size-base;
-		&.s-tab-item-current {
+	}
+
+	&.s-tab-default {
+		.s-tab-item-default {
+			border-bottom: $margin-xxs solid $color-border-grey;
+		}
+	}
+
+	&.s-tab-primary {
+		.s-tab-item-current {
 			border-bottom: $margin-xxs solid $color-primary;
-			// border-image: linear-gradient($color-primary 70%, $color-success) 10 0;
+		}
+	}
+
+	&.s-tab-success {
+		.s-tab-item-current {
+			border-bottom: $margin-xxs solid $color-success;
+		}
+	}
+
+	&.s-tab-warning {
+		.s-tab-item-current {
+			border-bottom: $margin-xxs solid $color-warning;
+		}
+	}
+
+	&.s-tab-danger {
+		.s-tab-item-current {
+			border-bottom: $margin-xxs solid $color-danger;
 		}
 	}
 }
