@@ -269,6 +269,7 @@
 
 	&.s-button-size-default {
 		height: 72rpx;
+		padding: 0 $spacing-h-lg;
 
 		&.s-button-round {
 			border-radius: 12rpx;
@@ -282,7 +283,7 @@
 
 	&.s-button-size-small {
 		height: 60rpx;
-
+		padding: 0 $spacing-h-md;
 		&.s-button-round {
 			border-radius: 12rpx;
 		}
@@ -295,7 +296,7 @@
 
 	&.s-button-size-large {
 		height: 96rpx;
-
+		padding: 0 $spacing-h-xl;
 		&.s-button-round {
 			border-radius: 12rpx;
 		}
@@ -303,6 +304,21 @@
 		&.s-button-circle {
 			// min-width: 96rpx;
 			border-radius: 96rpx;
+		}
+	}
+
+
+	&.s-button-size-mini {
+		height: 48rpx;
+		padding: 0 $spacing-h-md;
+		font-size: $font-size-sm;
+		&.s-button-round {
+			border-radius: 12rpx;
+		}
+
+		&.s-button-circle {
+			// min-width: 96rpx;
+			border-radius: 48rpx;
 		}
 	}
 

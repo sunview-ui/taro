@@ -1,0 +1,68 @@
+@import '../../styles/variable.scss';
+
+.s-alert {
+	color: $color-text-base;
+	font-size: $font-size-base;
+	color: $color-text-base;
+	padding: $spacing-v-md $spacing-h-md;
+	border: 2rpx solid $color-bg-grey;
+	border-radius: 12rpx;
+	background: transparent;
+	// width: calc(100% - $spacing-h-md * 2);
+
+	&.s-alert-primary {
+		color: $color-primary;
+		border-color: light($color-primary, 45%);
+		background: light($color-primary, 90%);
+	}
+
+	&.s-alert-success {
+		color: $color-success;
+		border-color: light($color-success, 45%);
+		background: light($color-success, 90%);
+	}
+
+	&.s-alert-warning {
+		color: $color-warning;
+		border-color: light($color-warning, 45%);
+		background: light($color-warning, 90%);
+	}
+
+	&.s-alert-danger {
+		color: $color-danger;
+		border-color: light($color-danger, 45%);
+		background: light($color-danger, 90%);
+	}
+
+	&.s-alert-left {
+		text-align: left;
+	}
+
+	&.s-alert-center {
+		text-align: center;
+	}
+
+	&.s-alert-right {
+		text-align: right;
+	}
+
+	&.s-alert-mini {
+		padding: $spacing-v-xs $spacing-h-xs;
+		font-size: 20rpx;
+	}
+
+	&.s-alert-small {
+		padding: $spacing-v-sm $spacing-h-sm;
+		font-size: 20rpx;
+	}
+
+	&.s-alert-large {
+		padding: $spacing-v-lg $spacing-h-lg;
+	}
+
+	&.s-alert-inline {
+		width: unset;
+		display: inline-block;
+	}
+
+}

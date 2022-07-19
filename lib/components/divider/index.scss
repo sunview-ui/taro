@@ -1,0 +1,38 @@
+@import '../../styles/variable.scss';
+
+.s-divider {
+	width: 100%;
+	border-bottom: 2rpx solid $color-border-base;
+
+	&.s-divider-type-primary {
+		border-color: $color-primary;
+	}
+
+	&.s-divider-type-success {
+		border-color: $color-success;
+	}
+
+	&.s-divider-type-warning {
+		border-color: $color-warning;
+	}
+
+	&.s-divider-type-danger {
+		border-color: $color-danger;
+	}
+
+	&.s-divider-size-default {
+		margin: $spacing-v-md 0;
+	}
+
+	&.s-divider-size-mini {
+		margin: $spacing-v-xs 0;
+	}
+
+	&.s-divider-size-small {
+		margin: $spacing-v-sm 0;
+	}
+
+	&.s-divider-size-large {
+		margin: $spacing-v-lg 0;
+	}
+}

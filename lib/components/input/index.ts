@@ -65,6 +65,11 @@ export default {
 			default: false
 		},
 
+		required: {
+			type: Boolean,
+			default: false
+		},
+
 		onClick: Function,
 		onTap: Function,
 
@@ -156,7 +161,7 @@ export default {
 				icon: props.icon,
 				size: 28
 			}) : '',
-			h(Text, {
+			h(View, {
 				class: "s-input-title",
 				style: {
 					width: Taro.pxTransform(inject("titleWidth", props.titleWidth) as any),
@@ -164,7 +169,12 @@ export default {
 					display: 'flex',
 					justifyContent: { left: 'flex-start', center: 'center', right: 'flex-end' }[inject("titleAlign", props.titleAlign) as any]
 				}
-			}, props.title),
+			}, [
+				props.title,
+				props.required ? h(View, {
+					class: "required"
+				}, "*")	: ""
+			]),
 
 			slots.content ? slots.content() : h(props.type === 'textarea' ? Textarea : Input, mergeProps({
 				class: "s-input-content",
@@ -180,7 +190,7 @@ export default {
 				onBlur: handleBlur,
 				type: props.type
 			}, attrs)),
-			props.value.length > 0 && props.allowClear && !props.disabled ? h(SIcon, {
+			props.value?.length > 0 && props.allowClear && !props.disabled ? h(SIcon, {
 				class: "s-input-clear",
 				icon: "close-circle",
 				size: 28,

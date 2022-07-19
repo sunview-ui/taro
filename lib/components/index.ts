@@ -1,3 +1,4 @@
+import SAlert from './alert'
 import SIcon from './icon'
 import SColorIcon from './color-icon'
 import SButton from './button'
@@ -24,8 +25,10 @@ import SList from './list'
 import SListItem from './list-item'
 import SQRCode from './qrcode'
 import SBarCode from './barcode'
+import SDivider from './divider'
 
 export {
+	SAlert,
 	SIcon,
 	SColorIcon,
 	SButton,
@@ -51,5 +54,6 @@ export {
 	SList,
 	SListItem,
 	SQRCode,
-	SBarCode
+	SBarCode,
+	SDivider
 }

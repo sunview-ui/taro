@@ -48,6 +48,7 @@ export default {
 			default: "default",
 			validator: (val) =>
 				[
+					"default",
 					"top",
 					"bottom",
 				].includes(val),

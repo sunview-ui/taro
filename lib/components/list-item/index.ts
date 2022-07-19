@@ -21,11 +21,11 @@ export default {
 		},
 		titleAlign: {
 			type: String,
-			default: ""
+			default: "left"
 		},
 		contentAlign: {
 			type: String,
-			default: ""
+			default: "left"
 		},
 		noMargin: {
 			type: Boolean,
@@ -53,6 +53,7 @@ export default {
 			validator: (val) =>
 				[
 					"default",
+					"mini",
 					"small",
 					"large",
 				].includes(val),
@@ -73,34 +74,33 @@ export default {
 
 		let titleRender = () => h(View, {
 			class: "s-list-item-title", style: {
-				width: Taro.pxTransform(props.titleWidth || inject("titleWidth")),
-				textAlign: props.titleAlign || inject("titleAlign"),
+				width: Taro.pxTransform(props.titleWidth || inject("titleWidth", props.titleWidth)),
+				textAlign: props.titleAlign || inject("titleAlign", props.titleAlign),
 				display: 'flex',
-				justifyContent: { left: 'flex-start', center: 'center', right: 'flex-end' }[props.titleAlign || inject("titleAlign")]
+				justifyContent: { left: 'flex-start', center: 'center', right: 'flex-end' }[props.titleAlign || inject("titleAlign", props.titleAlign)]
 
 			}
 		}, slots.title?.() || props.title);
-
 		let contentRender = () => h(View, {
 			class: "s-list-item-content", style: {
-				textAlign: props.contentAlign || inject("contentAlign"),
+				textAlign: props.contentAlign || inject("contentAlign", props.contentAlign),
 				display: 'flex',
-				justifyContent: { left: 'flex-start', center: 'center', right: 'flex-end' }[props.contentAlign || inject("contentAlign")]
+				justifyContent: { left: 'flex-start', center: 'center', right: 'flex-end' }[props.contentAlign || inject("contentAlign", props.contentAlign)]
 			},
 		}, slots.content?.() || props.content);
 
 		let dotRender = () => props.dot ? h(View, {
 			class: "s-list-item-dot", style: {
-				textAlign: props.contentAlign || inject("contentAlign"),
+				textAlign: props.contentAlign || inject("contentAlign", props.contentAlign),
 			},
 		}, h(SDot, props.dot)) : '';
 
 		return () => h(View, mergeProps({
 			class: ["s-list-item",
-				`s-list-item-size-${inject("size") || props.size}`,
-				props.round || inject("itemRound") ? 's-list-item-round' : '',
-				props.circle || inject("itemCircle") ? 's-list-item-circle' : '',
-				props.noMargin || inject("itemNoMargin") ? 's-list-item-no-margin' : ''
+				`s-list-item-size-${props.size || inject("size", props.size)}`,
+				props.round || inject("itemRound", props.round) ? 's-list-item-round' : '',
+				props.circle || inject("itemCircle", props.circle) ? 's-list-item-circle' : '',
+				props.noMargin || inject("itemNoMargin", props.noMargin) ? 's-list-item-no-margin' : ''
 			],
 		}, attrs), [
 			h(View, { class: "main" }, [

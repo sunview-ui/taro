@@ -1,8 +1,10 @@
 @import '../../styles/variable.scss';
 
 .s-form {
-	.s-input {
+	.s-input,
+	.s-alert {
 		margin-bottom: $spacing-h-lg;
+
 		&:last-child {
 			margin-bottom: unset;
 		}

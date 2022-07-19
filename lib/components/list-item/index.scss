@@ -7,10 +7,8 @@
 	flex-direction: column;
 	box-sizing: border-box;
 	margin: 0 $spacing-h-lg;
-	font-size: $font-size-base;
 	line-height: $font-size-base;
 	overflow: hidden;
-	padding: $spacing-h-lg 0;
 
 	.main {
 		width: 100%;
@@ -36,23 +34,47 @@
 	}
 
 	&.s-list-item-size-default {
+		margin-top: $spacing-v-md;
+		margin-bottom: $spacing-v-md;
+		padding: $spacing-h-md 0;
 		min-height: 72rpx;
+		font-size: $font-size-base;
 
 		&.s-list-item-circle {
 			border-radius: 72rpx;
 		}
 	}
 
-	&.s-list-item-size-small {
-		min-height: 60rpx;
+	&.s-list-item-size-mini {
+		margin-top: $spacing-v-xs;
+		margin-bottom: $spacing-v-xs;
+		padding: $spacing-h-sm 0;
+		min-height: 40rpx;
+		font-size: $font-size-xs;
 
 		&.s-list-item-circle {
-			border-radius: 60rpx;
+			border-radius: 40rpx;
+		}
+	}
+
+	&.s-list-item-size-small {
+		margin-top: $spacing-v-sm;
+		margin-bottom: $spacing-v-sm;
+		padding: $spacing-h-sm 0;
+		min-height: 40rpx;
+		font-size: $font-size-sm;
+
+		&.s-list-item-circle {
+			border-radius: 40rpx;
 		}
 	}
 
 	&.s-list-item-size-large {
+		margin-top: $spacing-v-lg;
+		margin-bottom: $spacing-v-lg;
+		padding: $spacing-h-lg 0;
 		min-height: 96rpx;
+		font-size: $font-size-lg;
 
 		&.s-list-item-circle {
 			border-radius: 96rpx;
@@ -64,8 +86,6 @@
 	}
 
 	.s-list-item-main {
-		margin-top: $spacing-v-md;
-		margin-bottom: $spacing-v-md;
 		margin-right: $spacing-h-lg;
 		flex: 1;
 

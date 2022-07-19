@@ -25,6 +25,7 @@ export default {
 					"default",
 					"small",
 					"large",
+					"mini",
 				].includes(val),
 		},
 		icon: {

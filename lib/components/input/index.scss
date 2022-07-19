@@ -57,6 +57,10 @@
 
 	.s-input-title {
 		margin-right: $spacing-h-lg;
+		.required {
+			margin-left: $spacing-h-sm;
+			color:$color-danger;
+		}
 	}
 
 	.s-input-content {
