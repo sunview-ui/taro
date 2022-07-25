@@ -88,7 +88,7 @@
 
 
 	&.s-tag-size-small {
-		padding: #{$margin-xs / 2} #{$margin / 2};
+		padding: calc($margin-xs / 2) calc($margin / 2);
 		font-size: $font-size-sm;
 
 		&.s-tag-circle {
@@ -98,7 +98,7 @@
 
 
 	&.s-tag-size-mini {
-		padding: #{$margin-xs / 4} #{$margin/2};
+		padding: calc($margin-xs / 4) calc($margin / 2);
 		font-size: $font-size-xs;
 
 		&.s-tag-circle {
