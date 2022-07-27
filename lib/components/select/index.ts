@@ -1,5 +1,5 @@
 import { PickerView, PickerViewColumn, View } from "@tarojs/components"
-import { computed, ComputedRef, h, mergeProps, Ref, ref } from "@vue/runtime-core"
+import { computed, ComputedRef, h, mergeProps, Ref, ref, watch } from "@vue/runtime-core"
 import { SInput, SModal } from "../"
 
 import './index.scss'
@@ -12,9 +12,7 @@ export default {
 		},
 		data: {
 			type: Array,
-			default() {
-				return [];
-			}
+			required: true
 		},
 		dataKey: {
 			type: String,
@@ -40,6 +38,8 @@ export default {
 		},
 	},
 	setup(props, { attrs, emit }) {
+
+
 
 		let getInital = () => {
 			let inital: {
@@ -82,7 +82,10 @@ export default {
 			return inital;
 		};
 
-		let inital = getInital();
+		let inital;
+		watch(() => props.data, (val, oldVal) => {
+			inital = getInital();
+		}, { deep: true, immediate: true })
 
 		let opened = ref(false);
 

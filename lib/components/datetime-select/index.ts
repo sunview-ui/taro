@@ -8,7 +8,7 @@ import { prefixZero } from '../../utils'
 export default {
 	props: {
 		value: {
-			type: [String, Date],
+			type: [String, Date, Number],
 			default: "",
 			required: true
 		},
@@ -21,12 +21,16 @@ export default {
 				"datetime"
 			].includes(val)
 		},
+		timestamp: {
+			type: Boolean,
+			default: true
+		},
 		start: {
-			type: [String, Date],
+			type: [String, Date, Number],
 			default: ""
 		},
 		end: {
-			type: [String, Date],
+			type: [String, Date, Number],
 			default: ""
 		},
 		placeholder: {
@@ -374,11 +378,11 @@ export default {
 			}
 			let finalResult = new Date(result[0], result[1] - 1, result[2], result[3], result[4], result[5]);
 			emit("select", {
-				value: finalResult,
+				value: props.timestamp ? finalResult.valueOf() : finalResult,
 				raw: valueIndex.value,
 				rawTitle: result
 			});
-			emit("update:value", finalResult)
+			emit("update:value", props.timestamp ? finalResult.valueOf() : finalResult)
 		}
 
 		return () => [
